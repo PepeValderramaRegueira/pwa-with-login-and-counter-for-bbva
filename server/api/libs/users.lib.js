@@ -8,7 +8,10 @@ const saveUserToDB = async(newUser) => {
     newUser.password = hashedPassword;
 
     return newUserSaved = JSON.parse(JSON.stringify(
-      await Users.create(newUser)
+      await Users.create({
+        ...newUser,
+        lastLogin: Date.now()
+      })
     ));
   } catch (err) {
     throw err;

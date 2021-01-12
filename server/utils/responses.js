@@ -1,5 +1,4 @@
-const response = ({
-  res,
+const response = (res) => ({
   status = 200,
   message = '',
   data = {}
