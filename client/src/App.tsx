@@ -1,9 +1,12 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { LoggedInRoutes, LoggedOutRoutes } from './routes';
 
 const App: FC = () => {
+  const [user, setUser] = useState<boolean>(false);
+  
   return (
     <div>
-      <h1>PWA with login and counter</h1>
+      {user ? <LoggedInRoutes /> : <LoggedOutRoutes />}
     </div>
   );
 }
